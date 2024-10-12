@@ -1,26 +1,26 @@
 import React from 'react';
+import { Card, ListGroup } from 'react-bootstrap';
 
 const QuizCard = ({ quizData, handleAnswerSelection }) => {
   return (
-    <div className="card" style={{ width: '18rem' }}>
-      <img className="card-img-top" src={quizData.image} alt="Quiz" />
-      <div className="card-body">
-        <h5 className="card-title">{quizData.title}</h5>
-        <p className="card-text">{quizData.description}</p>
-      </div>
-      <ul className="list-group list-group-flush">
+    <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={quizData.image} alt="Quiz" />
+      <Card.Body>
+        <Card.Title>{quizData.title}</Card.Title>
+        <Card.Text>{quizData.description}</Card.Text>
+      </Card.Body>
+      <ListGroup variant="flush">
         {quizData.options.map((option, index) => (
-          <li
+          <ListGroup.Item
             key={index}
-            className="list-group-item"
             onClick={() => handleAnswerSelection(index)}
             style={{ cursor: 'pointer' }}
           >
             {option}
-          </li>
+          </ListGroup.Item>
         ))}
-      </ul>
-    </div>
+      </ListGroup>
+    </Card>
   );
 };
 
