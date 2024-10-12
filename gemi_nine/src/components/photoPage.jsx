@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const PhotoPage = () => {
@@ -67,6 +68,8 @@ const PhotoPage = () => {
       <div className="identification-container mt-5">
         {/* Additional content can go here */}
       </div>
+
+      <Link to="/" className="btn btn-secondary">Back to Home</Link>
     </div>
   );
 };
