@@ -134,6 +134,7 @@ nav{
   margin-right: 3vw;
 }
 
+
 @media screen and(max-width:500px){
     .title-div{
       width: 60%;
@@ -188,7 +189,7 @@ nav{
 
   .footer { 
     background-color: #f8e9cc;
-    /* position: absolute;  */
+    position: absolute; 
     bottom: 0; 
     left: 0; 
     z-index: 10;
@@ -213,4 +214,31 @@ nav{
   justify-content: space-around;
 }
 
-/* CSS for Quiz Page */
+/* CSS for User Page */
+.user-info{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 5vh;
+  margin: 5vh;
+  justify-content: center;
+}
+
+.user-photo-big{
+  width:30vmin;
+  height: 30vmin;
+  justify-content: center;
+  object-fit: cover;
+}
+
+.user-info-button:{
+  width: 30vmin;
+  height: 30vmin;
+  border: 0px;
+  color:#f8e9cc
+}
+
+.user-details{
+  margin-top: 2vh;
+}

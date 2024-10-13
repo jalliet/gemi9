@@ -8,6 +8,7 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "./components/Home";
 import QuizPage from './components/QuizPage';
 import ImageUpload from './components/ImageUpload';
+import UserForm from "./components/UserForm";
 
 const App = () => {
   return (
@@ -16,7 +17,9 @@ const App = () => {
         {/* Define Routes for different pages */}
         <Routes>
           {/* Home page route */}
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<UserForm />} />
+           {/* Home page route */}
+           <Route path="/home" element={<Home />} />
           {/* Quiz page route */}
           <Route path="/quiz" element={<QuizPage />} />
           {/* Photo page route */}
