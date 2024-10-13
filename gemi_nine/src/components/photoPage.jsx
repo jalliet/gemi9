@@ -1,141 +1,115 @@
-import React, { useState } from "react";
-import { Link } from 'react-router-dom';
-import "bootstrap/dist/css/bootstrap.min.css";
-import {Storage} from '@google-cloud/storage';
+// import React, { useState } from "react";
+// import { Link } from 'react-router-dom';
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import {Storage} from '@google-cloud/storage';
 
-const PhotoPage = () => {
-  const [imagePreview, setImagePreview] = useState(null); // State to store image preview
-  const [file, setFile] = useState(null); // State to store the selected file
+// const PhotoPage = () => {
+//   const [imagePreview, setImagePreview] = useState(null); // State to store image preview
+//   const [file, setFile] = useState(null); // State to store the selected file
 
-  // Function to handle file input change and display image preview
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    setFile(file);
+//   // Function to handle file input change and display image preview
+//   const handleFileChange = (event) => {
+//     const file = event.target.files[0];
+//     setFile(file);
 
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        setImagePreview(e.target.result);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
+//     if (file) {
+//       const reader = new FileReader();
+//       reader.onload = (e) => {
+//         setImagePreview(e.target.result);
+//       };
+//       reader.readAsDataURL(file);
+//     }
+//   };
 
-  // Function to handle image upload (you can replace with actual upload logic)
-  const uploadImage = () => {
-    if (!file) {
-      alert("Please select an image first!");
-      return;
-    }
+//   // Function to handle image upload (you can replace with actual upload logic)
+//   const uploadImage = () => {
+//     if (!file) {
+//       alert("Please select an image first!");
+//       return;
+//     }
+
+//     const {Storage} = require('@google-cloud/storage');
     
-    // For demo purposes, we just log the file object
-    console.log("Uploading file:", file);
+//     // For demo purposes, we just log the file object
+//     console.log("Uploading file:", file);
 
-    const bucketName = 'gemi9_image_store'
-    const fileName = '${file.name}_${Date.now()}'
+//     const bucketName = 'gemi9_image_store';
+//     const fileName = '${file.name}_${Date.now()}';
+//     const generationMatchPrecondition = 0;
 
-    alert("Image uploaded successfully!");
+//     alert("Image uploaded successfully!");
 
-    const storage = new Storage({
-      projectId: process.env.REACT_APP_GCS_PROJECT_ID,
-      credentials: {
-        client_email: process.env.REACT_APP_GCS_CLIENT_EMAIL,
-        private_key: process.env.REACT_APP_GCS_PRIVATE_KEY.replace(/\\n/g, '\n'),
-      }
-    });
+//     const storage = new Storage({
+//       projectId: 'zinc-conduit-438409-i7',
+//       credentials: {
+//         client_email: 'gemi9image@zinc-conduit-438409-i7.iam.gserviceaccount.com',
+//         private_key: 'AIzaSyAgsrjXTuGhb5AcuJsFiyUfpp5SGfobgBI',
+//       }
+//     });
     
-    function ImageUploader() {
-      const [file, setFile] = useState(null);
     
-      const handleFileChange = (e) => {
-        setFile(e.target.files[0]);
-      };
-    
-      const uploadFile = async () => {
-        if (!file) {
-          console.error('No file selected');
-          return;
-        }
-    
-        const bucketName = process.env.REACT_APP_GCS_BUCKET_NAME;
-        const fileName = `images/${Date.now()}_${file.name}`;
-    
-        try {
-          const bucket = storage.bucket(bucketName);
-          const blob = bucket.file(fileName);
-          
-          const blobStream = blob.createWriteStream({
-            resumable: false,
-            contentType: file.type
-          });
-    
-          blobStream.on('error', (err) => {
-            console.error('Error uploading file:', err);
-          });
-    
-          blobStream.on('finish', () => {
-            console.log('File uploaded successfully');
-            const publicUrl = `https://storage.googleapis.com/${bucketName}/${fileName}`;
-            console.log('Public URL:', publicUrl);
-          });
-    
-          const buffer = await file.arrayBuffer();
-          blobStream.end(Buffer.from(buffer));
-        } catch (error) {
-          console.error('Error:', error);
-        }
-      };
-    
-      return (
-        <div>
-          <input type="file" onChange={handleFileChange} accept="image/*" />
-          <button onClick={uploadFile}>Upload</button>
-        </div>
-      );
-    }
-    
-    export default ImageUploader;
-  };
 
-  return (
-    <div className="container">
-      {/* Image Upload Section */}
-      <div className="image-upload-container">
-        <h1>Take a Picture and Upload</h1>
+  
+  
+//     async function uploadFile() {
+//       const options = {
+//         destination: fileName,
+//         // Optional:
+//         // Set a generation-match precondition to avoid potential race conditions
+//         // and data corruptions. The request to upload is aborted if the object's
+//         // generation number does not match your precondition. For a destination
+//         // object that does not yet exist, set the ifGenerationMatch precondition to 0
+//         // If the destination object already exists in your bucket, set instead a
+//         // generation-match precondition using its generation number.
+//         preconditionOpts: {ifGenerationMatch: generationMatchPrecondition},
+//       };
+  
+//       await storage.bucket(bucketName).upload('/' + fileName, options);
+//       console.log(`${fileName} uploaded to ${bucketName}`);
+//     }
+  
+//     uploadFile().catch(console.error);
+     
 
-        {/* Input to capture a picture using the device camera */}
-        <input
-          type="file"
-          accept="image/*"
-          capture="environment"
-          onChange={handleFileChange}
-        />
+//   return (
+//     <div className="container">
+//       {/* Image Upload Section */}
+//       <div className="image-upload-container">
+//         <h1>Take a Picture and Upload</h1>
 
-        {/* Preview area for the captured image */}
-        {imagePreview && (
-          <div>
-            <img
-              src={imagePreview}
-              alt="Image Preview"
-              style={{ width: "300px", marginTop: "20px" }}
-            />
-          </div>
-        )}
+//         {/* Input to capture a picture using the device camera */}
+//         <input
+//           type="file"
+//           accept="image/*"
+//           capture="environment"
+//           onChange={handleFileChange}
+//         />
 
-        {/* Upload button */}
-        <button className="btn btn-primary mt-3" onClick={uploadImage}>
-          Upload Image
-        </button>
-      </div>
+//         {/* Preview area for the captured image */}
+//         {imagePreview && (
+//           <div>
+//             <img
+//               src={imagePreview}
+//               alt="Image Preview"
+//               style={{ width: "300px", marginTop: "20px" }}
+//             />
+//           </div>
+//         )}
 
-      {/* Identification and Information Section */}
-      <div className="identification-container mt-5">
-        {/* Additional content can go here */}
-      </div>
+//         {/* Upload button */}
+//         <button className="btn btn-primary mt-3" onClick={uploadImage}>
+//           Upload Image
+//         </button>
+//       </div>
 
-      <Link to="/" className="btn btn-secondary">Back to Home</Link>
-    </div>
-  );
-};
+//       {/* Identification and Information Section */}
+//       <div className="identification-container mt-5">
+//         {/* Additional content can go here */}
+//       </div>
 
-export default PhotoPage;
+//       <Link to="/" className="btn btn-secondary">Back to Home</Link>
+//     </div>
+//   );
+// };
+// }
+// export default PhotoPage;

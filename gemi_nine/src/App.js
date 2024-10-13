@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "./components/Home";
 import QuizPage from './components/QuizPage';
 import PhotoPage from './components/photoPage';
+import ImageUpload from './components/ImageUpload';
 
 const App = () => {
   return (
@@ -20,7 +21,7 @@ const App = () => {
           {/* Quiz page route */}
           <Route path="/quiz" element={<QuizPage />} />
           {/* Photo page route */}
-          <Route path="/photo" element={<PhotoPage />} />
+          <Route path="/photo" element={<ImageUpload />} />
         </Routes>
       </div>
     </Router>
