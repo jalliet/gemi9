@@ -3,15 +3,22 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <div className="container">
-      <h1>Welcome to our app </h1>
-      <p>Test your knowledge with our fun quizzes!</p>
+    <body>
+      
+      <header>
+        <nav>
+          <h1> Spotlight</h1>
+          <p> Shining a Light on Black Talent</p>
+        </nav>
+      </header>
+
+    <section className="home-buttons flex-column">
       {/* Link to the quiz page */}
-      <div className = "flex-column justify-content-center">
-      <Link to="/quiz" className="btn btn-primary"> Start Quiz</Link>
-      <Link to="/photo" className="btn btn-primary">  Upload a Photo </Link>
-      </div>
-    </div>
+      <section> <center> <Link to="/quiz" className=" btn primary-button"> Start Quiz</Link> </center> </section>
+      <section> <center> <Link to="/photo" className="btn primary-button">  Upload a Photo </Link> </center> </section>
+    </section>
+    
+    </body>
   );
 };
 
