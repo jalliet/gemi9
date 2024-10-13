@@ -51,14 +51,15 @@ width: 100%;
 h1{
 font-family: Verdana, Geneva, Tahoma, sans-serif;
 color: #1c1f28;
-font-size: 3rem;
+font-size: 8vmin;
 font-weight: bolder;
+margin-bottom: 0;
 }
 
 h2{
   font-family: Arial, Helvetica, sans-serif;
   color: #1c1f28;
-  font-size: 2.5rem;
+  font-size: 1vh;
   }
 body{
   background-color: #fdf6e8;
@@ -69,16 +70,76 @@ p{
   font-size: medium;
 }
 
+/* CSS for Nav Bar */
+
 nav{
   display: flex;
   flex-direction: row;
-  background-color: #fcefd6;
+  background-color: #f8e9cc;
   /* margin-top: 5%; */
-  justify-content: left;
+  justify-content: ;
   width: 100%;
-  padding: 0.25rem;
+  /* padding: 0.25vh; */
   /* margin-right: 5%;
   margin-left: 5% */
+}
+
+.pic-title-div{
+  /* margin-left: 5%; */
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+
+.title-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 75%;
+}
+
+.nav-div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+
+.user-div{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  width: 20%;
+}
+
+.gemi9_logo{
+  width: 20vmin;
+  height: 20vmin;
+  justify-content: left;;
+  /* margin: 0.5rem; */
+  object-fit: cover;
+  /* padding: 2vmin; */
+}
+
+.user-photo{
+  width: 15vmin;
+  height: 15vmin;
+  justify-content: center;
+  /* margin: 0.5rem; */
+  object-fit: cover;
+  margin-right: 3vw;
+}
+
+@media screen and(max-width:500px){
+    .title-div{
+      width: 60%;
+    }
+
+  
 }
 
 
@@ -91,17 +152,17 @@ nav{
   .primary-button{
   background-color: #e6c090;
   color: #1c1f28;
-  width: 70%;
-  height: 70%;
+  width: 75vw;
+  height: 32vh;
   /* position: absolute;
   left: 50%;
   transform: translate (-50%, 50%); */
   /* float: center; */
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: 3rem;
-  padding: 5rem;
-  margin-top: 2em;
-  
+  font-size: 4em;
+  text-align: center;
+  padding: 5vw;
+  margin-top: 5vh;
   
   }
 
@@ -126,7 +187,7 @@ nav{
   } */
 
   .footer { 
-    background-color: #fcefd6;
+    background-color: #f8e9cc;
     /* position: absolute;  */
     bottom: 0; 
     left: 0; 
@@ -134,6 +195,9 @@ nav{
     width: 100%;
     height: 5rem;
     text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    padding-top:1rem ;
     margin-top: 2rem;
 }
   
@@ -143,12 +207,10 @@ nav{
   width: 10%;
 }
 
-.gemi9_logo{
-  width: 5rem;
-  height: 5rem;
-  justify-self: left;
-  margin: 0.5rem;
-  object-fit: cover;
+.card{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 /* CSS for Quiz Page */
