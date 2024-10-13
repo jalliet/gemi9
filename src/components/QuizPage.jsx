@@ -142,11 +142,11 @@ const QuizPage = () => {
        {/* <center> <Link to="/" className="btn secondary-button">Back to Home</Link> </center> */}
       </div>
 
-        <div class="footer"> 
+        {/* <div class="footer"> 
       <p>
         Created by GEMI9
       </p>
-      </div>
+      </div> */}
     </body>
     )
       }  
