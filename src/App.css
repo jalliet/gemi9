@@ -251,23 +251,24 @@ nav{
   /* display: flex;
   flex-direction: column;
   align-items: center; */
-  
 }
 
 #ourLogoImage{
   width: 15vw;
   height: 15vw;
   object-fit: contain;
-  
+  border-radius: 10px;
 }
 
 #titleBox{
   display: flex;
   flex-direction: row;
+  margin-bottom: 1vh;
 }
 
 #processButton{
-  margin-bottom: 5px;
+  margin-bottom: 15px;
   border-radius: 10px;
+
 }
 /* CSS for Quiz Page */
