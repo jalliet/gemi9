@@ -30,6 +30,7 @@ const Home = () => {
         </nav>
       </header>
 
+        <center>
         <div class="card">
           <div className ="container">
             <h4><b>Firstname Surname</b></h4>
@@ -39,6 +40,7 @@ const Home = () => {
             <p> Streak:  7 days </p>
           </div>  
         </div>
+        </center>
     
 
     <section className="home-buttons flex-column">
@@ -50,7 +52,7 @@ const Home = () => {
    
      <div class="footer"> 
      <p>
-      Created by GEMI9
+      Created by GEMI9.
      </p>
      </div>
 
