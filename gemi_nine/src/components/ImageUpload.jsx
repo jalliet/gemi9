@@ -3,9 +3,13 @@ import React, { useState } from 'react';
 const ImageUpload = () => {
   const [file, setFile] = useState(null);
   const [uploadStatus, setUploadStatus] = useState('');
+  const [responseText, setResponseText] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
+    setResponseText('');
+    setUploadStatus('');
   };
 
   const handleUpload = async () => {
@@ -14,36 +18,68 @@ const ImageUpload = () => {
       return;
     }
 
-    const formData = new FormData();
-    formData.append('file', file);
+    setIsLoading(true);
+    setUploadStatus('');
+    setResponseText('');
 
-    try {
-      // Replace with your actual upload URL
-      const response = await fetch('https://europe-west2-zinc-conduit-438409-i7.cloudfunctions.net/ui-bridge', {
-        method: 'POST',
-        body: formData,
-      });
+    const reader = new FileReader();
+    reader.onloadend = async () => {
+      const base64Data = reader.result.split(',')[1];
 
-      if (response.ok) {
-        setUploadStatus('File uploaded successfully!');
-      } else {
-        setUploadStatus('Upload failed. Please try again.');
+      try {
+        const response = await fetch('https://europe-west2-zinc-conduit-438409-i7.cloudfunctions.net/ui-bridge', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ file: base64Data }),
+        });
+
+        if (!response.ok) {
+          throw new Error(`Upload failed: ${response.status} ${response.statusText}`);
+        }
+        console.log(response.responseText);
+        const text = await response.text();
+        console.log(text);
+        setResponseText(text);
+        setUploadStatus('Image processed successfully.');
+      } catch (error) {
+        console.error('Error:', error);
+        setUploadStatus(`Error: ${error.message}`);
+      } finally {
+        setIsLoading(false);
       }
-    } catch (error) {
-      console.error('Error uploading file:', error);
-      setUploadStatus('An error occurred. Please try again.');
-    }
+    };
+
+    reader.readAsDataURL(file);
   };
 
   return (
-    <div className="max-w-md mx-auto mt-8">
-      <h2 className="text-2xl font-bold mb-4">Upload Image to Cloud Storage</h2>
-      <input type="file" accept="image/*" onChange={handleFileChange} className="mb-4" />
-      <button onClick={handleUpload} className="w-full mb-4">Upload Image</button>
+    <div className="max-w-2xl mx-auto mt-8 p-6 bg-white rounded-lg shadow-lg">
+      <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">Image Upload and Analysis</h2>
+      <input 
+        type="file" 
+        accept="image/*" 
+        onChange={handleFileChange} 
+        className="mb-4 w-full p-2 border rounded"
+      />
+      <button 
+        onClick={handleUpload} 
+        className="w-full mb-6 bg-blue-500 text-white py-3 px-4 rounded-lg hover:bg-blue-600 transition duration-300 font-semibold"
+        disabled={isLoading || !file}
+      >
+        {isLoading ? 'Processing...' : 'Upload and Analyze Image'}
+      </button>
       {uploadStatus && (
-        <alert variant={uploadStatus.includes('successfully') ? 'default' : 'destructive'}>
-          <alertDescription>{uploadStatus}</alertDescription>
-        </alert>
+        <div className={`p-4 rounded-lg mb-6 ${uploadStatus.includes('successfully') ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'}`}>
+          {uploadStatus}
+        </div>
+      )}
+      {responseText && (
+        <div className="mt-6 p-6 bg-gray-100 rounded-lg shadow">
+          <h3 className="text-xl font-bold mb-4 text-gray-800">Response from Server:</h3>
+          <pre className="whitespace-pre-wrap break-words">{responseText}</pre>
+        </div>
       )}
     </div>
   );
