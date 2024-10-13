@@ -1,16 +1,18 @@
 {
   "files": {
-    "main.css": "/gemi9/static/css/main.51207784.css",
-    "main.js": "/gemi9/static/js/main.f562a0e1.js",
+    "main.css": "/gemi9/static/css/main.deac4a35.css",
+    "main.js": "/gemi9/static/js/main.bb03d9ef.js",
     "static/js/453.039e1e87.chunk.js": "/gemi9/static/js/453.039e1e87.chunk.js",
     "static/media/GEMI9_logo.png": "/gemi9/static/media/GEMI9_logo.a8a5a218c8d5b696ef95.png",
+    "static/media/Spotlight-AppLogo.png": "/gemi9/static/media/Spotlight-AppLogo.021c90a277dea8b27c82.png",
+    "static/media/pfp.png": "/gemi9/static/media/pfp.79743ba896cbe516d6fb.png",
     "index.html": "/gemi9/index.html",
-    "main.51207784.css.map": "/gemi9/static/css/main.51207784.css.map",
-    "main.f562a0e1.js.map": "/gemi9/static/js/main.f562a0e1.js.map",
+    "main.deac4a35.css.map": "/gemi9/static/css/main.deac4a35.css.map",
+    "main.bb03d9ef.js.map": "/gemi9/static/js/main.bb03d9ef.js.map",
     "453.039e1e87.chunk.js.map": "/gemi9/static/js/453.039e1e87.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.51207784.css",
-    "static/js/main.f562a0e1.js"
+    "static/css/main.deac4a35.css",
+    "static/js/main.bb03d9ef.js"
   ]
 }
