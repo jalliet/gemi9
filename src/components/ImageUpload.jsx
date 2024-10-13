@@ -92,7 +92,7 @@ const ImageUpload = () => {
         <img id="ourLogoImage" src={groupLogo} alt="" />
         <h2 id="pageTitle" ClassName="text-3xl font-bold mb-6 text-center text-gray-800"> Spotlight AI</h2>
       </div>
-      <p>Shining the light on black talent</p>
+      <p>Shining the light on black innovation</p>
       <input 
         type="file" 
         accept="image/*" 
