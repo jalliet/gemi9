@@ -1,10 +1,20 @@
 import React, { useState } from 'react';
+import InfoCard from './InfoCard';
 
 const ImageUpload = () => {
   const [file, setFile] = useState(null);
   const [uploadStatus, setUploadStatus] = useState('');
   const [responseText, setResponseText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  var apiResponse = {
+    name: "", 
+    nationality: "", 
+    heritage: "", 
+    contribution: "", 
+    bio: "", 
+    info_links: [],
+    image_link: []
+  };
 
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
@@ -41,7 +51,9 @@ const ImageUpload = () => {
         console.log(response.responseText);
         const text = await response.text();
         console.log(text);
-        setResponseText(text);
+        const texttoObj = JSON.parse(text);
+        console.log(apiResponse);
+        setResponseText(JSON.parse(text));
         setUploadStatus('Image processed successfully.');
       } catch (error) {
         console.error('Error:', error);
@@ -76,10 +88,10 @@ const ImageUpload = () => {
         </div>
       )}
       {responseText && (
-        <div className="mt-6 p-6 bg-gray-100 rounded-lg shadow">
-          <h3 className="text-xl font-bold mb-4 text-gray-800">Response from Server:</h3>
-          <pre className="whitespace-pre-wrap break-words">{responseText}</pre>
-        </div>
+         <InfoCard
+            infoData={responseText}
+            handleSelection={handleUpload}
+        ></InfoCard>
       )}
     </div>
   );
