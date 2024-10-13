@@ -10,7 +10,7 @@ const Home = () => {
         <nav>
           <img className = "gemi9_logo" src = {GEMI9Logo} alt = "gemi9"/> 
           <div> 
-          <h1 className = "logo-button"> SPOTLIGHT</h1>
+          <h1 className = "logo-name"> SPOTLIGHT</h1>
           <p> Shining a Light on Black Talent</p> 
           </div>
   

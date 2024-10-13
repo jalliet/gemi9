@@ -52,6 +52,7 @@ h1{
 font-family: Verdana, Geneva, Tahoma, sans-serif;
 color: #1c1f28;
 font-size: 3rem;
+font-weight: bolder;
 }
 
 h2{
@@ -106,6 +107,7 @@ nav{
 
   .primary-button:hover{
     text-decoration: none; background-color: #fcefd6; color: #3d3d3d;
+    font-weight: bold;
   }
   
   .secondary-button{
@@ -135,7 +137,7 @@ nav{
     margin-top: 2rem;
 }
   
-.logo-button{
+.logo-name{
   background-color:#fcefd6 ;
   color: #1c1f28;
   width: 10%;
