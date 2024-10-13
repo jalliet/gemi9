@@ -7,8 +7,10 @@ const Home = () => {
       <h1>Welcome to our app </h1>
       <p>Test your knowledge with our fun quizzes!</p>
       {/* Link to the quiz page */}
-      <Link to="/quiz" className="btn btn-primary">Start Quiz</Link>
+      <div className = "flex-column justify-content-center">
+      <Link to="/quiz" className="btn btn-primary"> Start Quiz</Link>
       <Link to="/photo" className="btn btn-primary">  Upload a Photo </Link>
+      </div>
     </div>
   );
 };
