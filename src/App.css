@@ -221,4 +221,8 @@ nav{
 .user-button{
  background-color: #f8e9cc;
 }
+
+.container{
+  text-align: center;
+}
 /* CSS for Quiz Page */
