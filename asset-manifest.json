@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/gemi9/static/css/main.b20786bc.css",
+    "main.js": "/gemi9/static/js/main.24834e62.js",
+    "static/js/453.039e1e87.chunk.js": "/gemi9/static/js/453.039e1e87.chunk.js",
+    "index.html": "/gemi9/index.html",
+    "main.b20786bc.css.map": "/gemi9/static/css/main.b20786bc.css.map",
+    "main.24834e62.js.map": "/gemi9/static/js/main.24834e62.js.map",
+    "453.039e1e87.chunk.js.map": "/gemi9/static/js/453.039e1e87.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b20786bc.css",
+    "static/js/main.24834e62.js"
+  ]
+}
