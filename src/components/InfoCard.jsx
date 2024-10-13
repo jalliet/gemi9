@@ -4,7 +4,7 @@ import { Card, ListGroup } from 'react-bootstrap';
 
 function InfoCard({ infoData, handleSelection }) {
   return (
-    <div className="bg-white shadow-md rounded-lg overflow-hidden">
+    <div id="infoCardBox" className="bg-white shadow-md rounded-lg overflow-hidden">
       <Card>
         <Card.Header as="h5">Info</Card.Header>
         <Card.Body>
@@ -16,7 +16,7 @@ function InfoCard({ infoData, handleSelection }) {
                 </p>
             ))}
             </Card.Text>
-            <button variant="primary" onClick={handleSelection}>Next Card</button>
+            
         </Card.Body>
         </Card>
     </div>

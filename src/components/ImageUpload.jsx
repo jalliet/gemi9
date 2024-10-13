@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import InfoCard from './InfoCard';
+import groupLogo from "../groupLogoCircle.png"
 import { Link } from 'react-router-dom';
 import GEMI9Logo from "./GEMI9_logo.png";
 import SpotlightLogo from "./Spotlight-AppLogo.png"
@@ -9,6 +10,7 @@ const ImageUpload = () => {
   const [uploadStatus, setUploadStatus] = useState('');
   const [responseText, setResponseText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [previewUrl, setPreviewUrl] = useState(null);
   var apiResponse = {
     name: "", 
     nationality: "", 
@@ -20,9 +22,20 @@ const ImageUpload = () => {
   };
 
   const handleFileChange = (event) => {
-    setFile(event.target.files[0]);
+    const selectedFile = event.target.files[0];
+    setFile(selectedFile);
     setResponseText('');
     setUploadStatus('');
+    if (selectedFile) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPreviewUrl(reader.result);
+      };
+      reader.readAsDataURL(selectedFile);
+    } else {
+      setPreviewUrl(null);
+    }
+
   };
 
   const handleUpload = async () => {
@@ -70,31 +83,16 @@ const ImageUpload = () => {
   };
 
   return (
+    
 
   <body>
-    <header>
-    <nav>
-      <div className = "nav-div">
-        <div className = "pic-title-div">
-        <Link to="/" >
-            <img className = "gemi9_logo" src = {SpotlightLogo} alt = "gemi9"/> </Link>
-          <div className = "title-div"> 
-            <h1 className = "logo-name"> SPOTLIGHT</h1>
-            <p> Shining a Light on Black Excellence </p> 
-          </div>
-        </div>
-
-        <div className = "user-div"> 
-        {/* CHANGE THIS TO USER PROFILE PAGE */}
-        <Link to="/photo" className="user-button"> <img className = "user-photo" src = {GEMI9Logo} alt = "user image"/> </Link>
-        </div>
-
+    
+    <div id="imageUploadNavBar" className="max-w-2xl mx-auto mt-8 p-6 bg-#e6c090 rounded-lg shadow-lg">
+      <div id="titleBox">
+        <img id="ourLogoImage" src={groupLogo} alt="" />
+        <h2 id="pageTitle" ClassName="text-3xl font-bold mb-6 text-center text-gray-800"> Spotlight AI</h2>
       </div>
-
-    </nav>
-  </header>
-    <div className="max-w-2xl mx-auto mt-8 p-6 bg-white rounded-lg shadow-lg">
-      <h2 ClassName="text-3xl font-bold mb-6 text-center text-gray-800"> Image Upload and Analysis</h2>
+      
       <input 
         type="file" 
         accept="image/*" 
@@ -102,7 +100,8 @@ const ImageUpload = () => {
         className="mb-4 w-full p-2 border rounded"/>
       <button 
         onClick={handleUpload} 
-        className="w-full mb-6 bg-blue-500 text-white py-3 px-4 rounded-lg hover:bg-blue-600 transition duration-300 font-semibold"
+        id="processButton"
+        className="w-full mb-6 mr-10 bg-blue-500 text-black py-3 px-4 rounded-lg hover:bg-blue-600 transition duration-300 font-semibold "
         disabled={isLoading || !file}
       >
         {isLoading ? 'Processing...' : 'Upload and Analyze Image'}
@@ -110,6 +109,11 @@ const ImageUpload = () => {
       {uploadStatus && (
         <div className={`p-4 rounded-lg mb-6 ${uploadStatus.includes('successfully') ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'}`}>
           {uploadStatus}
+        </div>
+      )}
+      {previewUrl && (
+        <div className="mb-4">
+          <img src={previewUrl} alt="Preview" id="uploadedImage" className=" rounded-lg" />
         </div>
       )}
       {responseText && (
