@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import InfoCard from './InfoCard';
+import { Link } from 'react-router-dom';
 
 const ImageUpload = () => {
   const [file, setFile] = useState(null);
@@ -73,8 +74,7 @@ const ImageUpload = () => {
         type="file" 
         accept="image/*" 
         onChange={handleFileChange} 
-        className="mb-4 w-full p-2 border rounded"
-      />
+        className="mb-4 w-full p-2 border rounded"/>
       <button 
         onClick={handleUpload} 
         className="w-full mb-6 bg-blue-500 text-white py-3 px-4 rounded-lg hover:bg-blue-600 transition duration-300 font-semibold"
@@ -93,6 +93,8 @@ const ImageUpload = () => {
             handleSelection={handleUpload}
         ></InfoCard>
       )}
+
+      <Link to="/" className="btn btn-secondary">Back to Home</Link>
     </div>
   );
 };
