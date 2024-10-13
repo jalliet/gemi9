@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, doc, setDoc } from 'firebase/firestore';
+<<<<<<< HEAD
+=======
+import GEMI9Logo from "./GEMI9_logo.png";
+import userPhoto from "./user-photo.png"
+>>>>>>> 8162bc8 (nj)
 
 // Initialize Firebase (replace with your own config)
 const firebaseConfig = {
@@ -19,6 +24,11 @@ const db = getFirestore(app);
 
 function UserForm() {	
 	const [username, setUsername] = useState('');
+<<<<<<< HEAD
+=======
+	const [highScore, setHighScore] = useState(0);
+	const [topStreak, setTopStreak] = useState(0);
+>>>>>>> 8162bc8 (nj)
   
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -30,6 +40,11 @@ function UserForm() {
 		  	// Set the document data
 		  	await setDoc(userRef, {
 				username: username,
+<<<<<<< HEAD
+=======
+				high_score: highScore,
+				top_streak: topStreak
+>>>>>>> 8162bc8 (nj)
 		  	}, { merge: true });  // This will update existing fields or add new ones
 
 		  	console.log('User data updated successfully!');
@@ -41,6 +56,7 @@ function UserForm() {
 	};
 
 	return (
+<<<<<<< HEAD
 		<form onSubmit={handleSubmit}>
 			<input
 				type="text"
@@ -53,6 +69,67 @@ function UserForm() {
 			<p>Best Quiz Streak: </p>
 			<button type="submit">Update User Data</button>
 		</form>
+=======
+		
+		<body>
+			<header>
+        <nav>
+          <div className = "nav-div">
+            <div className = "pic-title-div">
+              <img className = "gemi9_logo" src = {GEMI9Logo} alt = "gemi9"/> 
+              <div className = "title-div"> 
+                <h1 className = "logo-name"> SPOTLIGHT</h1>
+                <p> Shining a Light on Black Excellence </p> 
+              </div>
+            </div>
+
+            <div className = "user-div">
+              <img className = "user-photo" src = {userPhoto} alt = "user image"/>
+            </div>
+    
+          </div>
+  
+        </nav>
+      </header>
+	  
+		<div className = "user-info">
+<img className = "user-photo-big" src = {userPhoto} alt = "user image"/>
+			<form onSubmit={handleSubmit}>
+				<input
+					className = "user-details"
+					type="text"
+					value={username}
+					onChange={(e) => setUsername(e.target.value)}
+					placeholder="Username"
+					required
+				/>
+				{/* <input
+					type="number"
+					value={highScore}
+					onChange={(e) => setHighScore(parseInt(e.target.value))}
+					placeholder="High Score"
+					required
+				/> */}
+				{/* <input
+					type="number"
+					value={topStreak}
+					onChange={(e) => setTopStreak(parseInt(e.target.value))}
+					placeholder="Top Streak"
+					required
+				/> */}
+				<p> High Score:  </p>
+				<p> Best Question Streak: </p>
+				<button type="submit"> Update User Dat a</button>
+			</form>
+		</div>
+
+		<div class="footer"> 
+     		<p>
+     		 Created by GEMI9
+     		</p>
+    	</div>
+		</body>
+>>>>>>> 8162bc8 (nj)
 	);
 }
   

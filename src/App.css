@@ -188,7 +188,7 @@ nav{
 
   .footer { 
     background-color: #f8e9cc;
-    position: fixed; 
+    position: absolute; 
     bottom: 0; 
     left: 0; 
     /* z-index: 10; */
