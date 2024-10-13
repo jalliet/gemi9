@@ -18,14 +18,15 @@ const App = () => {
         {/* Define Routes for different pages */}
         <Routes>
           {/* Home page route */}
-          <Route path="/" element={<Home />} />
+          {/* <Route path="/" element={<Home />} /> */}
+          <Route path="/" element={<UserProfileCard />} />
           {/* Quiz page route */}
           <Route path="/quiz" element={<QuizPage />} />
           {/* Photo page route */}
           <Route path="/photo" element={<ImageUpload />} />
           {/* User Form page route */}
           {/* <Route path="/profile" element={<UserForm />} /> */}
-          <Route path="/profile" element={<UserProfileCard/>} />  
+          <Route path="/home" element={<Home/>} />  
         </Routes>
       </div>
     </Router>

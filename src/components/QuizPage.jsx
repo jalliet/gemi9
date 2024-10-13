@@ -90,7 +90,7 @@ const QuizPage = () => {
       <nav>
         <div className = "nav-div">
           <div className = "pic-title-div">
-          <Link to="/" >
+          <Link to="/home" >
             <img className = "gemi9_logo" src = {SpotlightLogo} alt = "gemi9"/> </Link>
             <div className = "title-div"> 
               <h1 className = "logo-name"> SPOTLIGHT</h1>
@@ -100,7 +100,7 @@ const QuizPage = () => {
 
           <div className = "user-div"> 
           {/* CHANGE THIS TO USER PROFILE PAGE */}
-          <Link to="/photo" className="user-button"> <img className = "user-photo" src = {GEMI9Logo} alt = "user image"/> </Link>
+          <Link to="/" className="user-button"> <img className = "user-photo" src = {GEMI9Logo} alt = "user image"/> </Link>
           </div>
 
         </div>
