@@ -4,7 +4,7 @@ import { Card, ListGroup } from 'react-bootstrap';
 const QuizCard = ({ quizData, handleAnswerSelection }) => {
   return (
     <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={quizData.image} alt="Quiz" />
+      {/* <Card.Img variant="top" src={quizData.image} alt="Quiz" /> */}
       <Card.Body>
         <Card.Title>{quizData.title}</Card.Title>
         <Card.Text>{quizData.description}</Card.Text>
