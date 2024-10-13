@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import QuizCard from './QuizCard';
+import InfoCard from './InfoCard';
 import { Link } from 'react-router-dom';
 
 const practiceQuizData = [
@@ -19,18 +20,27 @@ const practiceQuizData = [
       options: ['Earth', 'Mars', 'Jupiter', 'Venus'],
       correctAnswer: 1, // Index of the correct answer ('Mars')
     },
-    // Add more quiz questions as needed
   ];
+
+// Example info data for InfoCard
+const infoExample = {
+  name: "Elijah McCoy", 
+  nationality: "United States", 
+  heritage: "African American", 
+  contribution: "Train lubrication system", 
+  bio: "Elijah McCoy was an African American inventor who became known for his work on oiling steam engines. His inventions, including the lubricating cup (which allowed locomotives to be lubricated while in motion), were widely used by railroads around the world.", 
+  info_links: [ "https://en.wikipedia.org/wiki/Elijah_McCoy" ],
+  image_link: [ "https://en.wikipedia.org/wiki/Elijah_McCoy/image" ]
+};
+
   
 
 const QuizPage = () => {
   const [quizData, setQuizData] = useState(practiceQuizData[0]);
   const [score, setScore] = useState(0);
-
-    //code to allow demoing
-    const [currQuestionIndex, setCurrQuestionIndex] = useState(0);
-
-    console.log(currQuestionIndex);
+  const [showInfo, setShowInfo] = useState(false); // State to control InfoCard visibility
+  const [infoData, setInfoData] = useState(infoExample)
+  const [currQuestionIndex, setCurrQuestionIndex] = useState(0);
 
 //   useEffect(() => {
 //     fetchQuizData();
@@ -44,25 +54,30 @@ const QuizPage = () => {
 //       .catch(error => console.error('Error fetching quiz data:', error));
 //   };
 
-  const handleAnswerSelection = (selectedOption) => {
-    if (selectedOption === quizData.correctAnswer) {
-      alert('Correct!');
-      setScore(score + 1);
-    } else {
-      alert('Incorrect!');
-    }
+  // Function to handle switching to the next quiz question
+  const toggleCard = () => {
     // // Fetch the next quiz question after answering
     // fetchQuizData();
 
     const nextQuestionIndex = currQuestionIndex + 1;
-    if (nextQuestionIndex < practiceQuizData.length){
+    if (nextQuestionIndex < practiceQuizData.length) {
         setCurrQuestionIndex(nextQuestionIndex);
         setQuizData(practiceQuizData[nextQuestionIndex]);
+        setShowInfo(false); // Hide InfoCard when switching questions
     } else {
-        alert('Quiz complete')
+        alert('Quiz complete');
     }
+  };
 
-
+  // Function to handle answer selection and display InfoCard
+  const handleAnswerSelection = (selectedOption) => {
+    if (selectedOption === quizData.correctAnswer) {
+      alert('Correct!');
+      setScore(score + 1); // Increment score if correct
+    } else {
+      alert('Incorrect!');
+    }
+    setShowInfo(true); // Show InfoCard after answering
   };
 
   return (
@@ -76,6 +91,14 @@ const QuizPage = () => {
         handleAnswerSelection={handleAnswerSelection}
       />
 
+      {/* Conditionally render InfoCard after answering */}
+      {showInfo && 
+        (<InfoCard
+            infoData={infoData}
+            handleSelection={toggleCard}
+        ></InfoCard>)}
+
+      {/* Quiz Card displaying current question */}
       {/* {quizData ? (
         <QuizCard
           quizData={quizData}
