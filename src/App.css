@@ -70,10 +70,10 @@ p{
 
 nav{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   background-color: #fcefd6;
   /* margin-top: 5%; */
-  justify-content: center;
+  justify-content: left;
   width: 100%;
   padding: 0.25rem;
   /* margin-right: 5%;
@@ -111,11 +111,42 @@ nav{
   .secondary-button{
     background-color: #1c1f28;
     color: #f8e9cc;
-    width: 40%;
+    width: 5rem;
     height: 40%;
     float: left;
   
   }
+
+  /* footer{
+    background-color: #fcefd6;
+    height: 20%;
+    text-align: center;
+  } */
+
+  .footer { 
+    background-color: #fcefd6;
+    /* position: absolute;  */
+    bottom: 0; 
+    left: 0; 
+    z-index: 10;
+    width: 100%;
+    height: 5rem;
+    text-align: center;
+    margin-top: 2rem;
+}
   
+.logo-button{
+  background-color:#fcefd6 ;
+  color: #1c1f28;
+  width: 10%;
+}
+
+.gemi9_logo{
+  width: 5rem;
+  height: 5rem;
+  justify-self: left;
+  margin: 0.5rem;
+  object-fit: cover;
+}
 
 /* CSS for Quiz Page */
