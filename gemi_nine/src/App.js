@@ -7,7 +7,6 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "./components/Home";
 import QuizPage from './components/QuizPage';
-import PhotoPage from './components/photoPage';
 import ImageUpload from './components/ImageUpload';
 
 const App = () => {
