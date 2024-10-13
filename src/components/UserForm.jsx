@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, doc, setDoc } from 'firebase/firestore';
 import GEMI9Logo from "./GEMI9_logo.png";
 import userPhoto from "./user-photo.png";
+import SpotlightLogo from "./Spotlight-AppLogo.png"
 
 // Initialize Firebase (replace with your own config)
 const firebaseConfig = {
@@ -47,6 +49,25 @@ function UserForm() {
 	};
 
 	return (
+	<body>
+		<header>
+			<nav>
+			<div className = "nav-div">
+				<div className = "pic-title-div">
+				<Link to="/" >
+				<img className = "gemi9_logo" src = {SpotlightLogo} alt = "gemi9"/> </Link>
+				<div className = "title-div"> 
+					<h1 className = "logo-name"> SPOTLIGHT</h1>
+					<p> Shining a Light on Black Excellence </p> 
+				</div>
+				</div>
+				<div className = "user-div"> 
+				<Link to="/profile" className="user-button"> <img className = "user-photo" src = {GEMI9Logo} alt = "user image"/> </Link>
+				</div>
+			</div>
+			</nav>
+      </header>
+
 		<form onSubmit={handleSubmit}>
 			<input
 				type="text"
@@ -59,6 +80,7 @@ function UserForm() {
 			<p>Best Quiz Streak: </p>
 			<button type="submit">Update User Data</button>
 		</form>
+	</body>
 	);
 }
   

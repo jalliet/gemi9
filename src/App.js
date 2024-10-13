@@ -8,7 +8,8 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "./components/Home";
 import QuizPage from './components/QuizPage';
 import ImageUpload from './components/ImageUpload';
-import UserForm from "./components/UserForm";
+import UserProfileCard from './components/user-profile-card';
+// import UserForm from "./components/UserForm";
 
 const App = () => {
   return (
@@ -23,7 +24,8 @@ const App = () => {
           {/* Photo page route */}
           <Route path="/photo" element={<ImageUpload />} />
           {/* User Form page route */}
-          <Route path="/profile" element={<UserForm />} />
+          {/* <Route path="/profile" element={<UserForm />} /> */}
+          <Route path="/profile" element={<UserProfileCard/>} />  
         </Routes>
       </div>
     </Router>

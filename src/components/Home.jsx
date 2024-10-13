@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import GEMI9Logo from "./GEMI9_logo.png";
 import userPhoto from "./pfp.png"
 import SpotlightLogo from "./Spotlight-AppLogo.png"
+import UserProfileCard from './user-profile-card';
 
 const Home = () => {
   return (
@@ -22,7 +23,7 @@ const Home = () => {
 
             <div className = "user-div"> 
             {/* CHANGE THIS TO USSER PROFILE PAGE */}
-            <Link to="/photo" className="user-button"> <img className = "user-photo" src = {GEMI9Logo} alt = "user image"/> </Link>
+            <Link to="/profile" className="user-button"> <img className = "user-photo" src = {GEMI9Logo} alt = "user image"/> </Link>
             </div>
     
           </div>
@@ -42,7 +43,7 @@ const Home = () => {
         </div>
         </center>
     
-
+        {/* <UserProfileCard /> */}
     <section className="home-buttons flex-column">
       {/* Link to the quiz page */}
       <section> <center> <Link to="/quiz" className=" btn primary-button"> Start Quiz</Link> </center> </section>
