@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import InfoCard from './InfoCard';
 import { Link } from 'react-router-dom';
+import GEMI9Logo from "./GEMI9_logo.png";
+import SpotlightLogo from "./Spotlight-AppLogo.png"
 
 const ImageUpload = () => {
   const [file, setFile] = useState(null);
@@ -68,8 +70,31 @@ const ImageUpload = () => {
   };
 
   return (
+
+  <body>
+    <header>
+    <nav>
+      <div className = "nav-div">
+        <div className = "pic-title-div">
+        <Link to="/" >
+            <img className = "gemi9_logo" src = {SpotlightLogo} alt = "gemi9"/> </Link>
+          <div className = "title-div"> 
+            <h1 className = "logo-name"> SPOTLIGHT</h1>
+            <p> Shining a Light on Black Excellence </p> 
+          </div>
+        </div>
+
+        <div className = "user-div"> 
+        {/* CHANGE THIS TO USER PROFILE PAGE */}
+        <Link to="/photo" className="user-button"> <img className = "user-photo" src = {GEMI9Logo} alt = "user image"/> </Link>
+        </div>
+
+      </div>
+
+    </nav>
+  </header>
     <div className="max-w-2xl mx-auto mt-8 p-6 bg-white rounded-lg shadow-lg">
-      <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">Image Upload and Analysis</h2>
+      <h2 ClassName="text-3xl font-bold mb-6 text-center text-gray-800"> Image Upload and Analysis</h2>
       <input 
         type="file" 
         accept="image/*" 
@@ -94,8 +119,9 @@ const ImageUpload = () => {
         ></InfoCard>
       )}
 
-      <Link to="/" className="btn btn-secondary">Back to Home</Link>
+      {/* <Link to="/" className="btn secondary-button">Back to Home</Link> */}
     </div>
+    </body>
   );
 };
 

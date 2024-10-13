@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import GEMI9Logo from "./GEMI9_logo.png";
-import userPhoto from "./user-photo.png"
+import userPhoto from "./pfp.png"
+import SpotlightLogo from "./Spotlight-AppLogo.png"
 
 const Home = () => {
   return (
@@ -11,16 +12,17 @@ const Home = () => {
         <nav>
           <div className = "nav-div">
             <div className = "pic-title-div">
-              <img className = "gemi9_logo" src = {GEMI9Logo} alt = "gemi9"/> 
+            <Link to="/" >
+            <img className = "gemi9_logo" src = {SpotlightLogo} alt = "gemi9"/> </Link>
               <div className = "title-div"> 
                 <h1 className = "logo-name"> SPOTLIGHT</h1>
                 <p> Shining a Light on Black Excellence </p> 
               </div>
             </div>
 
-            <div className = "user-div">
-              <button><img className = "user-photo" src = {userPhoto} alt = "user image"/>
-            </button>
+            <div className = "user-div"> 
+            {/* CHANGE THIS TO USSER PROFILE PAGE */}
+            <Link to="/photo" className="user-button"> <img className = "user-photo" src = {GEMI9Logo} alt = "user image"/> </Link>
             </div>
     
           </div>

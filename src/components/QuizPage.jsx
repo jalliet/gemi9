@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import QuizCard from './QuizCard';
 import InfoCard from './InfoCard';
 import { Link } from 'react-router-dom';
+import GEMI9Logo from "./GEMI9_logo.png";
+import SpotlightLogo from "./Spotlight-AppLogo.png"
 
 const practiceQuizData = [
     {
@@ -80,41 +82,73 @@ const QuizPage = () => {
     setShowInfo(true); // Show InfoCard after answering
   };
 
+
   return (
-    <div className="container">
+    <body>
+      
       <header>
-        <h1>Quiz Page</h1>
-      </header>
+      <nav>
+        <div className = "nav-div">
+          <div className = "pic-title-div">
+          <Link to="/" >
+            <img className = "gemi9_logo" src = {SpotlightLogo} alt = "gemi9"/> </Link>
+            <div className = "title-div"> 
+              <h1 className = "logo-name"> SPOTLIGHT</h1>
+              <p> Shining a Light on Black Excellence </p> 
+            </div>
+          </div>
 
-      <QuizCard
-        quizData={quizData}
-        handleAnswerSelection={handleAnswerSelection}
-      />
+          <div className = "user-div"> 
+          {/* CHANGE THIS TO USER PROFILE PAGE */}
+          <Link to="/photo" className="user-button"> <img className = "user-photo" src = {GEMI9Logo} alt = "user image"/> </Link>
+          </div>
 
-      {/* Conditionally render InfoCard after answering */}
-      {showInfo && 
-        (<InfoCard
-            infoData={infoData}
-            handleSelection={toggleCard}
-        ></InfoCard>)}
+        </div>
 
-      {/* Quiz Card displaying current question */}
-      {/* {quizData ? (
+      </nav>
+    </header>
+
+      <div className="container">
+        <header>
+          <h1>Quiz Page</h1>
+        </header>
+
         <QuizCard
           quizData={quizData}
           handleAnswerSelection={handleAnswerSelection}
         />
-      ) : (
-        <p>Loading quiz...</p>
-      )} */}
 
-      <footer>
-        <p>Score: <span>{score}</span></p>
-      </footer>
+        {/* Conditionally render InfoCard after answering */}
+        {showInfo && 
+          (<InfoCard
+              infoData={infoData}
+              handleSelection={toggleCard}
+          ></InfoCard>)}
 
-      <Link to="/" className="btn btn-secondary">Back to Home</Link>
-    </div>
-  );
-};
+        {/* Quiz Card displaying current question */}
+        {/* {quizData ? (
+          <QuizCard
+            quizData={quizData}
+            handleAnswerSelection={handleAnswerSelection}
+          />
+        ) : (
+          <p>Loading quiz...</p>
+        )} */}
+
+        <footer>
+          <p>Score: <span>{score}</span></p>
+        </footer>
+
+       {/* <center> <Link to="/" className="btn secondary-button">Back to Home</Link> </center> */}
+      </div>
+
+        <div class="footer"> 
+      <p>
+        Created by GEMI9
+      </p>
+      </div>
+    </body>
+    )
+      }  
 
 export default QuizPage;
