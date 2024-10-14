@@ -54,7 +54,7 @@ const generateQuizQuestions = (inventorsData, numQuestions = 10) => {
     // Construct the question object
     questions.push({
       name : inventor.name,
-      image: inventor.image_link ? inventor.image_link[0] : phImage, // Placeholder image if no image is provided
+      image: inventor.image_link, // Placeholder image if no image is provided
       title: `What contribution did ${inventor.name} make in science?`,
       description: 'Select the correct answer from the options below.',
       options,
@@ -209,12 +209,6 @@ const QuizPage = () => {
 
       {/* <Link to="/" className="btn btn-secondary">Back to Home</Link> */}
     </div>
-    
-        {/* <div class="footer"> 
-      <p>
-        Created by GEMI9
-      </p>
-      </div> */}
     </>
     )
       }  

@@ -1,61 +1,182 @@
 /* Quiz Page Styles */
 .container {
-    max-width: 800px; /* Limit the maximum width of the container */
-    margin: 0 auto; /* Center the container */
-    padding: 20px; /* Add padding around the container */
-    background-color: #f9f9f9; /* Light background color */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  max-width: 800px; /* Limit the maximum width of the container */
+  margin: 0 auto; /* Center the container */
+  padding: 20px; /* Add padding around the container */
+  background-color: #f9f9f9; /* Light background color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Make the container responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px; /* Reduce padding on smaller screens */
   }
-  
-  header {
-    text-align: center; /* Center the header text */
-    margin-bottom: 20px; /* Space below the header */
-  }
-  
-  footer {
-    text-align: center; /* Center the footer text */
-    margin-top: 20px; /* Space above the footer */
-  }
-  
-  /* Quiz Card Styles */
-  .card {
-    border: none; /* Remove the default border */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
-  }
-  
+}
+
+header {
+  text-align: center; /* Center the header text */
+  margin-bottom: 20px; /* Space below the header */
+}
+
+footer {
+  text-align: center; /* Center the footer text */
+  margin-top: 20px; /* Space above the footer */
+}
+
+/* Quiz Card Styles */
+.card {
+  border: none; /* Remove the default border */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+/* Ensure card title and text are responsive */
+.card-title {
+  font-size: 1.5rem; /* Increase the font size */
+  font-weight: bold; /* Make the title bold */
+  color: #333; /* Darker color for better readability */
+  margin: 10px 0; /* Space above and below title */
+}
+
+.card-text {
+  color: #555; /* Slightly lighter color for the description */
+  font-size: 1rem; /* Ensure readability on mobile */
+}
+
+/* Responsive list group items */
+.list-group-item {
+  padding: 15px; /* More padding for list items */
+  border: none; /* Remove the default border */
+  transition: background-color 0.3s; /* Smooth transition for background color */
+  font-size: 1rem; /* Ensure list item text is readable */
+}
+
+/* Change background on hover */
+.list-group-item:hover {
+  background-color: #f0f0f0; /* Change background on hover */
+}
+
+/* Styles for correct and incorrect answers */
+.list-group-item.red {
+  background-color: red; /* Red background for incorrect answer */
+  color: white; /* White text for contrast */
+}
+
+.list-group-item.green {
+  background-color: green; /* Green background for correct answer */
+  color: white; /* White text for contrast */
+}
+
+/* Button styles */
+.btn-secondary {
+  margin-top: 20px; /* Space above the button */
+}
+
+/* Quiz Card Specific Styles */
+.quiz-card {
+  width: 100%; /* Full width for responsive design */
+  max-width: 18rem; /* Limit maximum width */
+  margin: 10px auto; /* Center the card */
+}
+
+/* Ensure option items are styled correctly */
+.option-item {
+  padding: 10px;
+  transition: background-color 0.3s ease;
+  font-size: 1rem; /* Ensure readability */
+}
+
+/* Styles for correct and incorrect options */
+.option-item.correct {
+  background-color: green;
+  color: white;
+}
+
+.option-item.incorrect {
+  background-color: red;
+  color: white;
+}
+
+/* Ensure hover effect on option items */
+.option-item:hover {
+  background-color: #f0f0f0; /* Light gray on hover */
+}
+
+/* Info Card Styles (If applicable) */
+.info-card {
+  margin: 20px 0; /* Space around the info card */
+  padding: 30px; /* Padding for the info card */
+  border: 1px solid #ccc; /* Border for the info card */
+  border-radius: 5px; /* Rounded corners for the info card */
+  background-color: #fff; /* White background for the info card */
+}
+
+/* Make the info card responsive */
+.info-card-title {
+  font-size: 1.25rem; /* Title font size */
+}
+
+.info-card-content {
+  font-size: 0.9rem; /* Content font size */
+}
+
+/* Media queries for mobile responsiveness */
+@media (max-width: 576px) {
   .card-title {
-    font-size: 1.5rem; /* Increase the font size */
-    font-weight: bold; /* Make the title bold */
-    color: #333; /* Darker color for better readability */
+    font-size: 1.25rem; /* Reduce font size on small screens */
   }
   
-  .card-text {
-    color: #555; /* Slightly lighter color for the description */
+  .card-text,
+  .option-item {
+    font-size: 0.9rem; /* Smaller font size for mobile */
   }
-  
-  .list-group-item {
-    padding: 15px; /* More padding for list items */
-    border: none; /* Remove the default border */
-    transition: background-color 0.3s; /* Smooth transition for background color */
-  }
-  
-  .list-group-item:hover {
-    background-color: #f0f0f0; /* Change background on hover */
-  }
-  
-  .list-group-item.red {
-    background-color: red; /* Red background for incorrect answer */
-    color: white; /* White text for contrast */
-  }
-  
-  .list-group-item.green {
-    background-color: green; /* Green background for correct answer */
-    color: white; /* White text for contrast */
-  }
-  
-  .btn-secondary {
-    margin-top: 20px; /* Space above the button */
-  }
-  
+}
+
+
+
+
+/* Info Card Styles */
+.info-card {
+  background-color: #fff; /* White background */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  overflow: hidden; /* Hide overflow */
+  max-width: 400px; /* Limit maximum width */
+  margin: 20px auto; /* Center the card with margin */
+  padding: 20px; /* Padding inside the card */
+}
+
+.info-card-header {
+  font-size: 1.25rem; /* Font size for header */
+  font-weight: bold; /* Bold header */
+  margin-bottom: 15px; /* Space below the header */
+}
+
+.info-card-body {
+  font-size: 1rem; /* Default font size for body text */
+  color: #333; /* Dark color for text */
+}
+
+.info-card-title {
+  margin: 10px 0; /* Margin above and below title */
+}
+
+.info-card-text p {
+  margin: 5px 0; /* Space between paragraphs */
+}
+
+.info-card-button {
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white; /* White text color */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded button corners */
+  padding: 10px 15px; /* Padding for the button */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.info-card-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}

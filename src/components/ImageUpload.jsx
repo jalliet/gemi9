@@ -88,8 +88,9 @@ const ImageUpload = () => {
   <body>
     
     <div id="imageUploadNavBar" className="max-w-2xl mx-auto mt-8 p-6 bg-#e6c090 rounded-lg shadow-lg">
+      
       <div id="titleBox">
-        <img id="ourLogoImage" src={groupLogo} alt="" />
+        <Link to="/home" ><img id="ourLogoImage" src={groupLogo} alt="" /></Link>
         <h2 id="pageTitle" ClassName="text-3xl font-bold mb-6 text-center text-gray-800"> Spotlight AI</h2>
       </div>
       <p>Shining the light on black innovation</p>

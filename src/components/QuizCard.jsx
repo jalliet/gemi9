@@ -5,7 +5,7 @@ const QuizCard = ({ quizData, handleAnswerSelection, computeOptionStyle }) => {
   return (
     <Card className="card">
       {/* Display the inventor's image at the top of the card */}
-      <Card.Img variant="top" src={quizData.image} alt={quizData.name} />
+      {/* <Card.Img variant="top" src={quizData.image} alt={quizData.name} /> */}
 
       <Card.Body>
         <Card.Title className="card-title">{quizData.title}</Card.Title>
