@@ -106,8 +106,8 @@ footer {
 
 /* Info Card Styles (If applicable) */
 .info-card {
-  margin: 20px 0; /* Space around the info card */
-  padding: 30px; /* Padding for the info card */
+  margin: 30px 0; /* Space around the info card */
+  padding: 20px; /* Padding for the info card */
   border: 1px solid #ccc; /* Border for the info card */
   border-radius: 5px; /* Rounded corners for the info card */
   background-color: #fff; /* White background for the info card */
@@ -121,6 +121,12 @@ footer {
 .info-card-content {
   font-size: 0.9rem; /* Content font size */
 }
+
+.highlight {
+  font-weight: bold;
+  color: #007bff; /* Blue color for highlighting */
+}
+
 
 /* Media queries for mobile responsiveness */
 @media (max-width: 576px) {

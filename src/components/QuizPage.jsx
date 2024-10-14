@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import QuizCard from './QuizCard';
 import InfoCard from './InfoCard';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate for redirection
 import GEMI9Logo from "./GEMI9_logo.png";
 import SpotlightLogo from "./Spotlight-AppLogo.png";
 
 import inventorsData from './inventors-data-json.json';
 
-import phImage from './PH.png'
 import './QuizPage.css';
 
 
@@ -53,13 +52,14 @@ const generateQuizQuestions = (inventorsData, numQuestions = 10) => {
 
     // Construct the question object
     questions.push({
-      name : inventor.name,
+      name: inventor.name,
       image: inventor.image_link, // Placeholder image if no image is provided
-      title: `What contribution did ${inventor.name} make in science?`,
+      title: `What contribution did <span class="highlight">${inventor.name}</span> make in science?`,
       description: 'Select the correct answer from the options below.',
       options,
       correctAnswer: correctAnswerIndex, // Index of the correct answer
     });
+
   }
   return questions;
 };
@@ -91,6 +91,8 @@ const QuizPage = () => {
   const [selectedAnswer, setSelectedAnswer] = useState(null); // Tracks the selected answer
   const [isAnswered, setIsAnswered] = useState(false); // Tracks if the question has been answered
 
+  const navigate = useNavigate(); // Hook for navigation
+
   useEffect(() => {
     // Fetch data and generate quiz questions on component mount
     const getQuizQuestions = async () => {
@@ -116,12 +118,15 @@ const QuizPage = () => {
       setSelectedAnswer(null); // Reset selected answer for new question
       setIsAnswered(false); // Reset answer state
     } else {
-        alert('Quiz complete');
+      alert(`Quiz complete! Your score is: ${score}/${quizData.length}`);
+      navigate("/home"); // Redirect to home after alert
     }
   };
 
   // Function to handle answer selection and display InfoCard
   const handleAnswerSelection = (selectedIndex) => {
+    if (isAnswered) return; // Prevent selecting another option after an answer is made
+
     setSelectedAnswer(selectedIndex); // Set the selected answer
     setIsAnswered(true); // Mark the question as answered
 

@@ -4,13 +4,15 @@ import { Card, ListGroup } from 'react-bootstrap';
 const QuizCard = ({ quizData, handleAnswerSelection, computeOptionStyle }) => {
   return (
     <Card className="card">
-      {/* Display the inventor's image at the top of the card */}
-      {/* <Card.Img variant="top" src={quizData.image} alt={quizData.name} /> */}
-
       <Card.Body>
-        <Card.Title className="card-title">{quizData.title}</Card.Title>
+        {/* Use dangerouslySetInnerHTML to inject raw HTML for the title */}
+        <Card.Title 
+          className="card-title"
+          dangerouslySetInnerHTML={{ __html: quizData.title }} 
+        />
         <Card.Text className="card-text">{quizData.description}</Card.Text>
       </Card.Body>
+
       <ListGroup variant="flush">
         {quizData.options.map((option, index) => (
           <ListGroup.Item
