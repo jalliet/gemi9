@@ -119,7 +119,6 @@ const ImageUpload = () => {
       {responseText && (
          <InfoCard
             infoData={responseText}
-            handleSelection={handleUpload}
         ></InfoCard>
       )}
 
