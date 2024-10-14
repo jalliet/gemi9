@@ -1,0 +1,61 @@
+/* Quiz Page Styles */
+.container {
+    max-width: 800px; /* Limit the maximum width of the container */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Add padding around the container */
+    background-color: #f9f9f9; /* Light background color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  header {
+    text-align: center; /* Center the header text */
+    margin-bottom: 20px; /* Space below the header */
+  }
+  
+  footer {
+    text-align: center; /* Center the footer text */
+    margin-top: 20px; /* Space above the footer */
+  }
+  
+  /* Quiz Card Styles */
+  .card {
+    border: none; /* Remove the default border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  }
+  
+  .card-title {
+    font-size: 1.5rem; /* Increase the font size */
+    font-weight: bold; /* Make the title bold */
+    color: #333; /* Darker color for better readability */
+  }
+  
+  .card-text {
+    color: #555; /* Slightly lighter color for the description */
+  }
+  
+  .list-group-item {
+    padding: 15px; /* More padding for list items */
+    border: none; /* Remove the default border */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+  }
+  
+  .list-group-item:hover {
+    background-color: #f0f0f0; /* Change background on hover */
+  }
+  
+  .list-group-item.red {
+    background-color: red; /* Red background for incorrect answer */
+    color: white; /* White text for contrast */
+  }
+  
+  .list-group-item.green {
+    background-color: green; /* Green background for correct answer */
+    color: white; /* White text for contrast */
+  }
+  
+  .btn-secondary {
+    margin-top: 20px; /* Space above the button */
+  }
+  

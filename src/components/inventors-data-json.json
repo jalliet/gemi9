@@ -1,0 +1,101 @@
+[
+  {
+    "name": "Charles Drew",
+    "nationality": "United States",
+    "heritage": "African American",
+    "contribution": "Modern blood bank system",
+    "bio": "Charles Drew was an African American physician who pioneered methods of storing blood plasma for transfusion and organized the first large-scale blood bank in the U.S. His research on blood storage and transfusions saved thousands of lives during World War II.",
+    "infoLinks": ["https://en.wikipedia.org/wiki/Charles_R._Drew"],
+    "imageLink": "https://blackinventor.com/wp-content/uploads/2022/12/charlesdrew-circle101.jpg"
+  },
+  {
+    "name": "Daniel Hale Williams",
+    "nationality": "United States",
+    "heritage": "African American",
+    "contribution": "Open heart surgery",
+    "bio": "Daniel Hale Williams was one of the first physicians to perform open-heart surgery in the United States. He founded Provident Hospital, the first non-segregated hospital in the United States, which also had an affiliated nursing school for African Americans.",
+    "infoLinks": ["https://en.wikipedia.org/wiki/Daniel_Hale_Williams"],
+    "imageLink": "https://blackinventor.com/wp-content/uploads/2022/12/danielhalewilliams-circle101.jpg"
+  },
+  {
+    "name": "Elijah McCoy",
+    "nationality": "United States",
+    "heritage": "African American",
+    "contribution": "Automatic lubricator for steam engines",
+    "bio": "Elijah McCoy invented an automatic lubricator for oiling steam engines, revolutionizing the railway industry. His high-quality inventions gave rise to the expression 'the real McCoy', meaning the genuine article.",
+    "infoLinks": ["https://en.wikipedia.org/wiki/Elijah_McCoy"],
+    "imageLink": "https://blackinventor.com/wp-content/uploads/2022/12/elijahmccpoy-circle101.jpg"
+  },
+  {
+    "name": "Fred Jones",
+    "nationality": "United States",
+    "heritage": "African American",
+    "contribution": "Refrigeration system for trucks",
+    "bio": "Frederick McKinley Jones was an inventor best known for developing refrigeration equipment for trucks and railroad cars. His portable cooling units helped the formation of the frozen food industry and extended the availability of fresh produce.",
+    "infoLinks": ["https://en.wikipedia.org/wiki/Frederick_McKinley_Jones"],
+    "imageLink": "https://blackinventor.com/wp-content/uploads/2022/12/fredjones-circle101.jpg"
+  },
+  {
+    "name": "Garrett Morgan",
+    "nationality": "United States",
+    "heritage": "African American",
+    "contribution": "Traffic signal and gas mask",
+    "bio": "Garrett Morgan was an inventor and businessman known for inventing a three-position traffic signal and an improved smoke hood (early gas mask). His traffic signal was a significant contribution to public safety.",
+    "infoLinks": ["https://en.wikipedia.org/wiki/Garrett_Morgan"],
+    "imageLink": "https://blackinventor.com/wp-content/uploads/2022/12/garrettmorgan-circle101.jpg"
+  },
+  {
+    "name": "George Washington Carver",
+    "nationality": "United States",
+    "heritage": "African American",
+    "contribution": "Agricultural innovations and peanut products",
+    "bio": "George Washington Carver was an agricultural scientist and inventor who developed hundreds of products using peanuts, sweet potatoes, and soybeans. He devoted his life to research projects connected with southern agriculture.",
+    "infoLinks": ["https://en.wikipedia.org/wiki/George_Washington_Carver"],
+    "imageLink": "https://blackinventor.com/wp-content/uploads/2022/12/georgewashingtoncarver-circle101.jpg"
+  },
+  {
+    "name": "Jan Matzeliger",
+    "nationality": "United States",
+    "heritage": "African American",
+    "contribution": "Automated shoe lasting machine",
+    "bio": "Jan Matzeliger invented the automated shoe lasting machine that would attach the upper part of a shoe to the sole. His invention revolutionized the shoe industry by drastically reducing the cost of manufacturing shoes.",
+    "infoLinks": ["https://en.wikipedia.org/wiki/Jan_Ernst_Matzeliger"],
+    "imageLink": "https://blackinventor.com/wp-content/uploads/2022/12/janmatzeliger-circle101.jpg"
+  },
+  {
+    "name": "Lewis Latimer",
+    "nationality": "United States",
+    "heritage": "African American",
+    "contribution": "Improved light bulb",
+    "bio": "Lewis Latimer was an inventor and draftsman best known for his contributions to the patenting of the light bulb and the telephone. He developed a method of producing a more durable carbon filament, making electric lighting more practical and affordable.",
+    "infoLinks": ["https://en.wikipedia.org/wiki/Lewis_Howard_Latimer"],
+    "imageLink": "https://blackinventor.com/wp-content/uploads/2022/12/lewislatimer-circle101.jpg"
+  },
+  {
+    "name": "Madam C.J. Walker",
+    "nationality": "United States",
+    "heritage": "African American",
+    "contribution": "Hair care products for African American women",
+    "bio": "Madam C.J. Walker was an entrepreneur, philanthropist, and political and social activist. She is recorded as the first female self-made millionaire in America in the Guinness Book of World Records, having developed a line of cosmetics and hair care products for black women.",
+    "infoLinks": ["https://en.wikipedia.org/wiki/Madam_C._J._Walker"],
+    "imageLink": "https://blackinventor.com/wp-content/uploads/2022/12/madamcjwalker-circle101.jpg"
+  },
+  {
+    "name": "Percy Julian",
+    "nationality": "United States",
+    "heritage": "African American",
+    "contribution": "Synthetic medicinal compounds",
+    "bio": "Percy Lavon Julian was a research chemist and a pioneer in the chemical synthesis of medicinal drugs from plants. He was the first to synthesize the natural product physostigmine and was a pioneer in the industrial large-scale chemical synthesis of the human hormones progesterone and testosterone from plant sterols.",
+    "infoLinks": ["https://en.wikipedia.org/wiki/Percy_Lavon_Julian"],
+    "imageLink": "https://blackinventor.com/wp-content/uploads/2022/12/percyjulian-circle101.jpg"
+  },
+  {
+    "name": "Willis Johnson",
+    "nationality": "United States",
+    "heritage": "African American",
+    "contribution": "Egg beater",
+    "bio": "Willis Johnson patented an improved egg beater design in 1884. His invention featured two interlocking, hand-cranked whisks that rotated in opposite directions, making the process of beating eggs much more efficient.",
+    "infoLinks": ["https://blackinventor.com/willis-johnson/"],
+    "imageLink": "https://blackinventor.com/wp-content/uploads/2022/12/willisjohnson-circle101.jpg"
+  }
+]

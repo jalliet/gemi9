@@ -304,4 +304,38 @@ nav{
   border-radius: 10px;
 
 }
+
+
 /* CSS for Quiz Page */
+.primary-button {
+  background-color: #e6c090;
+  color: #1c1f28;
+  width: 80vw; /* Reduce width to 80% of viewport width */
+  height: auto; /* Allow height to adjust based on content */
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 6vw; /* Use viewport width units for font size */
+  text-align: center;
+  padding: 4vw; /* Adjust padding to use viewport width units */
+  margin-top: 3vh;
+  box-shadow: 2px 2px 3px grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  word-wrap: break-word; /* Allow words to break and wrap */
+  min-height: 20vh; /* Set a minimum height */
+}
+
+.primary-button:hover {
+  text-decoration: none;
+  background-color: #fcefd6;
+  color: #3d3d3d;
+  font-weight: bold;
+}
+
+/* Media query for very small screens */
+@media screen and (max-width: 320px) {
+  .primary-button {
+    font-size: 5vw; /* Further reduce font size for very small screens */
+    padding: 3vw;
+  }
+} 

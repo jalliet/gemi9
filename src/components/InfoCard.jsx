@@ -6,6 +6,7 @@ function InfoCard({ infoData, handleSelection }) {
   return (
     <div id="infoCardBox" className="bg-white shadow-md rounded-lg overflow-hidden">
       <Card>
+        {/* <Card.Img className="image"src={infoData.image} alt="Info" /> */}
         <Card.Header as="h5">Info</Card.Header>
         <Card.Body>
             {infoData.name && (<Card.Title>{infoData.name}</Card.Title>)}
@@ -16,6 +17,7 @@ function InfoCard({ infoData, handleSelection }) {
                 </p>
             ))}
             </Card.Text>
+            {handleSelection && (<button variant="primary" onClick={handleSelection}>Next Card</button>)}
             
         </Card.Body>
         </Card>
