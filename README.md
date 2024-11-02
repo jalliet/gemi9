@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# Spotlight
+
+Spotlight is a submission to Google's BGN Hackathon 2024, responding to themes 1 and 2 as shown below. 
+<p align="center">
+  <img src="README Resources/themes.jpeg" alt="BGN Hackathon 2024 Themes">
+</p>
+
+## Awards
+
+Google BGN Hackathon 2024:
+
+- Main Prize Winner 🏆
+- People's Choice Winner 🏆
+
+## Description and motivations
+
+### Brain teaser
+
+Name your top 5 favorite inventions of all time. 
+If you know the innovators behind their conception, count them on your hand 🖐️. Now, how many are of Afro-Caribbean heritage? 
+Put a finger down for each innovator that doesn't fit the bill. 
+Most of us would be down to just ☝️ finger or none at all. 
+
+There was and has never been a lack of Afro-Caribbean innovators are, their contributions to technical and social progress were and have been historically overlooked. 
+
+With this in mind, Spotlight is a web app whose purpose is to shine light on the historically overlooked everyday contributions of innovators of Afro-Caribbean origin in society, using computer vision and artificial intelligence. 
+
+### Features
+
+1. Spotlight AI: Your personal black history detective! 🕵🏾‍♀️ 
+Snap a pic of any object, and our AI will reveal if an Afro-Caribbean inventor was behind its creation. This involves object detection and generative AI magic! 🪄
+2. Spotlight Quiz Mode: Put your knowledge to the test with our interactive MCQ mode! 🧠💯 By matching innovators to inventions, racking up streaks, and climbing those leaderboards, we make continuous learning addictive. 
+ 
+## Getting Started
+
+Click to open [Spotlight v0](https://jalliet.github.io/gemi9/#/home) 
+
+### Spotlight Photo Mode
+
+1. Select "Upload a Photo"
+2. If you are on mobile, we encourage you to snap a photo of an ***object*** of your choice in your surroundings for maximum WOW factor 😉. Otherwise, feel free to upload a photo ***of an object*** of your choice.
+3. Now select "Upload and analyze image" and wait for the magic to happen 🪄
+4. If an Afro-Carribean innovator is behind the object in your photo, then you should see something similar to the below image. 
+
+<p align="center">
+  <img src="README Resources/photoModeOutput.jpeg" alt="Photo mode result with a microphone photo as input">
+</p>
+
+<p align="center">
+  <iframe style="display: inline-block; margin: 0 15px;" width="190" height="385" src="README Resources/planeVid.mp4" controls></iframe>
+  <iframe style="display: inline-block; margin: 0 15px;" width="190" height="385" src="README Resources/trainVid.mp4" controls></iframe>
+</p>
+
+<p align="center">
+    To demonstrate the stability of Google's Cloud Vision API within our app, Tobi had the wonderful idea od taking photos of moving objects to show the strength of our APIs.
+</p>
+
+### Spotlight Interactive Quiz Mode
+
+1. This time select Quiz mode
+2. Read and answer the questions, and see how many you get right!
+
+<p align="center">
+  <img src="README Resources/Quiz Mode.png" alt="Quiz mode example">
+</p>
+
+## Tech Stack
+
+1. Backend & APIs 💻
+ - [Google Cloud Platform ☁️](https://cloud.google.com/) 
+   - Cloud Storage 
+   - Cloud (Run) Functions 
+   - Cloud Vision API 
+ - Google Gemini API to generate quiz data and retrieve innovator data in photo mode
+ - Firestore database to store user information and statistics 📊 
+ - Python as our main backend language
+2. Frontend 🎨
+ - React framework for the user interface
+ - JavaScript carrying the frontend
+ - HTML/CSS/Bootstrap for structure and styling
+ - Github Pages for deployment 🚀
+
+#### Credits
+
+This project was built in its entirety by [Joshua Alliet](www.linkedin.com/in/jalliet), [Emmanuel Adio](https://www.linkedin.com/in/emmanuel-adio-272097216/), [Oluwatobi (Tobi) Salau](https://www.linkedin.com/in/oluwatobi-salau/), [Denise Dzakpasu](https://www.linkedin.com/in/denise-d-331ab9241/) and [Damilola (Dami) Ogunleye](https://www.linkedin.com/in/damilola-ogunleye-8393a5287/).
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
